@@ -1,0 +1,49 @@
+<p>blog-add works!</p>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Create New Post</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container" [ngStyle]="{backgroundImage:'url(assets/image/blogBG1.jpg)'}">
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form action="/posts/store" method="POST">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Title</label>
+                        <input [(ngModel)]="nblog.title" type="text" name="Title" placeholder="Title"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Content</label>
+                        <textarea [(ngModel)]=nblog.body name="Body" placeholder="Body ..." cols="30" rows="10"
+                            class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Tags</label>
+                        <input [(ngModel)]=nblog.tag type="text" name="Tag" placeholder="Tag" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group my-4 text-center">
+                    <button class="btn btn-primary" (click)="save()">Create Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

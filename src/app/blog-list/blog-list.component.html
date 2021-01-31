@@ -1,0 +1,62 @@
+<p>blog-list works!</p>
+<!-- <header class="masthead" >
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Create New Post</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> -->
+
+
+<div class="container" [ngStyle]="{backgroundImage:'url(assets/image/BlogListBG.jfif)'}" style="background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+border:2px solid lightyellow;">
+    <div *ngFor="let item of blogs; let i=index ;" class="container">
+        <h1 style="background-color:white; text-align: center;">Read New Post{{i+1}}</h1>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form action="/posts/store" method="POST">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Title</label>
+                            <input [(ngModel)]="item.title" type="text" name="Title" placeholder="Title"
+                                class="form-control" disabled="false">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Content</label>
+                            <textarea [(ngModel)]=item.body name="Body" placeholder="Body ..." cols="30" rows="10"
+                                class="form-control" disabled="false"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Tags</label>
+                            <input [(ngModel)]=item.tag type="text" name="Tag" placeholder="Tag"
+                                class="form-control" disabled="false">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Created Date</label>
+                            <input [(ngModel)]=item.createdAt type="text" name="createdAt" placeholder="createdAt"
+                                class="form-control" disabled="false">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <br /><br />
+    </div>
+</div>
+<router-outlet></router-outlet>

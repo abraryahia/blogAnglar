@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "blogAnglar"
+  "defaultProject": "blogAnglar",
+  "cli": {
+    "analytics": false
+  }
 }
