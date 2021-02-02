@@ -11,7 +11,7 @@ export class BlogService {
 
   }
     getAll(){
-   return this.http.get<Blog []>("http://localhost:3000/blog/all")
+   return this.http.get<Blog []>("http://localhost:3000/blog/home")
 
   }
 

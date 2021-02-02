@@ -9,6 +9,7 @@ import { UserService } from '../_Service/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  urlImg:string="assets/image/signup-image.jpg";
    nUser : User = new User('','','','');
   constructor( private UserService : UserService , private router : Router) { }
  

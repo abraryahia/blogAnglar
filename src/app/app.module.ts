@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import{JwtModule}from'@auth0/angular-jwt';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
  import { FormsModule} from '@angular/forms'
@@ -10,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -25,9 +30,19 @@ import { BlogListComponent } from './blog-list/blog-list.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        // whitelistedDomains: ['localhost:3000'],
+        // blacklistedRoutes: ['localhost:4000/api/auth']
+      }
+    })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }
