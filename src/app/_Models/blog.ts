@@ -1,5 +1,5 @@
 export class Blog {
-    constructor(public title: string, public body: string, public tag: string[], public createdAt?: Date) {
+    constructor(public title: string, public body: string, public tag: string[], public createdAt?: Date, public _id?: string) {
 
     }
 }

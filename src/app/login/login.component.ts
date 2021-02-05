@@ -15,25 +15,19 @@ export class LoginComponent implements OnInit {
   // logUser : User = new User('','','','');
   constructor(private UserService: UserService, private router: Router) { }
   urlImg: string = "assets/image/signin-image.jpg";
-  // login(){
-  //   this.UserService.login(this.logUser).subscribe(
-  //     d=> {
-  //     console.log(d)
-  //     this.router.navigateByUrl('/home')
-  //   }
-  //   )
-  // }
+
   public login() {
     this.UserService.login(this.username, this.password)
-      
       .subscribe(
         result => {
-          this.UserService.token=result.token;
+          this.UserService.token = result.token;
+          localStorage.setItem('access_token', result.token)
           this.router.navigate(['/blog'])
           console.log(result)
         },
         err => this.error = 'Could not authenticate'
       );
+
   }
 
   ngOnInit(): void {

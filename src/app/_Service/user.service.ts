@@ -8,13 +8,17 @@ import { User } from '../_Models/user';
   providedIn: 'root'
 })
 export class UserService {
-  public token!: string;
+  public token: any = localStorage.getItem('access_token');
+
 
   constructor(private http: HttpClient) { }
   login(username: string, password: string){
     return this.http.post<{ token: string }>('http://localhost:3000/user/login', { username: username, password: password })
      
       
+  }
+  getUser(){
+    return this.http.get<User>('http://localhost:3000/user/me',{ headers: { authorization: this.token } })
   }
 
   logout() {

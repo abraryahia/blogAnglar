@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -23,7 +24,8 @@ export function tokenGetter() {
     HomeComponent,
     LoginComponent,
     BlogAddComponent,
-    BlogListComponent
+    BlogListComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
