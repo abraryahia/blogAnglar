@@ -1,3 +1,4 @@
+<p>follow-profile works!</p>
 <!-- <p>user-profile works!</p> -->
 For demo purpose
 <!-- <div class="row">
@@ -19,8 +20,17 @@ For demo purpose
             <div class="px-4 pt-0 pb-4" [ngStyle]="{backgroundImage:'url(assets/image/blogBG1.jpg)'}">
                 <div class="media align-items-end profile-header">
                     <div class="profile mr-3"><img src="{{profile}}" alt="..." width="130"
-                            class="rounded mb-2 img-thumbnail"><a href="#" class="btn btn-dark btn-sm btn-block">Edit
-                            profile</a></div>
+                            class="rounded mb-2 img-thumbnail">
+                            <!-- <a class="btn btn-dark btn-sm btn-block">Follow</a> -->
+
+                        
+                            <button class="btn btn-is-info btn-sm btn-block"(click)="toggleFollow()">Follow</button>
+                       
+
+                        <ng-template #unfollowButton>
+                            <button class="btn btn-is-warning btn-sm btn-block" (click)="toggleFollow()">Unfollow</button>
+                        </ng-template>
+                    </div>
                     <div class="media-body mb-5 text-white">
                         <h4 class="mt-0 mb-0">{{user.username}}</h4>
                         <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>San Farcisco</p>
@@ -40,21 +50,6 @@ For demo purpose
                     </li>
                 </ul>
             </div>
-
-
-
-            <div class="py-4">
-                <h5 class="mb-3">Add posts</h5>
-                <div class="p-4 bg-light rounded shadow-sm">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item col-sm-12">
-                            <a class="btn btn-dark btn-sm btn-block" routerLink="/blog">Create Blog</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
 
 
 

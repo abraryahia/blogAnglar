@@ -4,6 +4,7 @@ export class User {
         public username: string,
         public password : string,
         public dob ?: Date,
+        public _id?:string,
         public following ?: [{ ref: 'User' }],
         public followers ?: [{ ref: 'User' }],
         )

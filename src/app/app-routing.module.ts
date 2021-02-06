@@ -7,6 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { SettingUserComponent } from './setting-user/setting-user.component';
+import { from } from 'rxjs';
+import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
@@ -17,7 +21,7 @@ const routes: Routes = [
   { path: 'blog/list', component: BlogListComponent },
   { path: 'blog/edit/:id', component: BlogEditComponent },
   { path: 'profile/setting', component: SettingUserComponent },
-  { path: 'profile', component: ProfileComponent },
+  {path:'search/:id',component:FollowProfileComponent},
   { path: '**', component: HomeComponent }
 ];
 

@@ -9,31 +9,25 @@ import { User } from '../_Models/user';
 })
 export class UserService {
   public token: any = localStorage.getItem('access_token');
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 
-  constructor(private http: HttpClient ) { }
-  login(username: string, password: string){
+  constructor(private http: HttpClient) { }
+  login(username: string, password: string) {
     return this.http.post<{ token: string }>('http://localhost:3000/user/login', { username: username, password: password })
   }
-<<<<<<< Updated upstream
-  getUser(){
-    return this.http.get<User>('http://localhost:3000/user/me',{ headers: { authorization: this.token } })
+  getUser() {
+    return this.http.get<User>('http://localhost:3000/user/me', { headers: { authorization: this.token } })
   }
 
-=======
-  EditData( eUser:User){
-  return this.http.patch<User>('http://localhost:3000/user/edit/',eUser ,{headers:{authorization:this.token}});
+  EditData(eUser: User) {
+    return this.http.patch<User>('http://localhost:3000/user/edit/', eUser, { headers: { authorization: this.token } });
   }
-  RemoveAc( ){
-    return this.http.delete<{msg:string}>('http://localhost:3000/user/remove' ,{headers:{authorization:this.token}});
-    }
-  getme( ){
-    return this.http.get<User>('http://localhost:3000/user/me' , {headers:{authorization:this.token}} );
+  RemoveAc() {
+    return this.http.delete<{ msg: string }>('http://localhost:3000/user/remove', { headers: { authorization: this.token } });
   }
->>>>>>> Stashed changes
+  getme() {
+    return this.http.get<User>('http://localhost:3000/user/me', { headers: { authorization: this.token } });
+  }
   logout() {
     localStorage.removeItem('access_token');
   }
@@ -45,8 +39,17 @@ export class UserService {
     return this.http.post<User>('http://localhost:3000/user/register', newUser);
   }
 
-  // login(logUser:User){
-  //  return this.http.post<User>('http://localhost:3000/user/login' , logUser )
-  // }
+  follow(id: string) {
+    return this.http.post('http://localhost:3000/user/follow/' + id, { headers: { authorization: this.token } })
+  }
+  unfollow(id: string) {
+    return this.http.post('http://localhost:3000/user/unfollow/' + id, { headers: { authorization: this.token } })
+  }
+  searchById(id: string) {
+    return this.http.get<User>('http://localhost:3000/user/search/' + id, { headers: { authorization: this.token } })
+  }
+  searchByName(username:string){
+    return this.http.get<User>('http://localhost:3000/user/name/' + username, { headers: { authorization: this.token } }) 
 
+  }
 }

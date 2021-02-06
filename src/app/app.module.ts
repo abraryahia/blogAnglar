@@ -11,13 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
-<<<<<<< Updated upstream
 import { UserProfileComponent } from './user-profile/user-profile.component';
-=======
 import { SettingUserComponent } from './setting-user/setting-user.component';
-import { ProfileComponent } from './profile/profile.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
->>>>>>> Stashed changes
+import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -31,13 +28,10 @@ export function tokenGetter() {
     LoginComponent,
     BlogAddComponent,
     BlogListComponent,
-<<<<<<< Updated upstream
-    UserProfileComponent
-=======
+    UserProfileComponent,
     SettingUserComponent,
-    ProfileComponent,
-    BlogEditComponent
->>>>>>> Stashed changes
+    BlogEditComponent,
+    FollowProfileComponent
   ],
   imports: [
     BrowserModule,
