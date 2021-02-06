@@ -9,6 +9,7 @@ import { Token } from '@angular/compiler/src/ml_parser/lexer';
 })
 export class BlogService {
   public token: any = localStorage.getItem('access_token');
+<<<<<<< Updated upstream
   
   add(nblog: Blog) {
     return this.http.post<Blog>("http://localhost:3000/blog/add", nblog, { headers: { authorization: this.token } });
@@ -20,6 +21,29 @@ export class BlogService {
   }
   getProfile() {
     return this.http.get<Blog[]>("http://localhost:3000/blog/profile",{ headers: { authorization: this.token } })
+=======
+  add(nblog:Blog){
+   return this.http.post<Blog>("http://localhost:3000/blog/add",nblog,{headers:{authorization:this.token}});
+
+  }
+  getme(){
+    return this.http.get<Blog[]>("http://localhost:3000/blog/profile", {headers : {authorization:this.token}});
+   }
+    getAll(){
+   return this.http.get<Blog []>("http://localhost:3000/blog/home")
+
+  }
+  editOne(id:string , eblog : Blog){
+    return this.http.patch<Blog>("http://localhost:3000/blog/"+ id , eblog , {headers : {authorization:this.token}});
+
+  }
+  // getOne(id:string){
+  //   return this.http.get<Blob>("http://localhost:3000/blog/one/" + id );
+  // }
+  getOne(id:string){
+    return this.http.get<Blog>("http://localhost:3000/blog/one/"+id,{headers:{authorization:this.u.token}});
+  }
+>>>>>>> Stashed changes
 
   }
 

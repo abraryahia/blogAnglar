@@ -6,7 +6,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
+<<<<<<< Updated upstream
 import { UserProfileComponent } from './user-profile/user-profile.component';
+=======
+import { SettingUserComponent } from './setting-user/setting-user.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
+>>>>>>> Stashed changes
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
@@ -15,6 +21,9 @@ const routes: Routes = [
   { path: 'home/profile', component: UserProfileComponent },
   { path: 'blog', component: BlogAddComponent },
   { path: 'blog/list', component: BlogListComponent },
+  { path: 'blog/edit/:id', component: BlogEditComponent },
+  { path: 'profile/setting', component: SettingUserComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', component: HomeComponent }
 ];
 

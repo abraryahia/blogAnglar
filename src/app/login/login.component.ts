@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   public login() {
     this.UserService.login(this.username, this.password)
+<<<<<<< Updated upstream
       .subscribe(
         result => {
           this.UserService.token = result.token;
@@ -28,6 +29,18 @@ export class LoginComponent implements OnInit {
         err => this.error = 'Could not authenticate'
       );
 
+=======
+    .subscribe(
+      result => {
+        this.UserService.token=result.token;
+        localStorage.setItem('access_token',result.token)
+        this.router.navigate(['/blog'])
+        console.log(result)
+      },
+      err => this.error = 'Could not authenticate'
+    );
+     
+>>>>>>> Stashed changes
   }
 
   ngOnInit(): void {

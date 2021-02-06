@@ -1,0 +1,9 @@
+<div class="alert-danger">
+    <h1>
+       title: {{Eblog.title}} , content :{{Eblog.body}} ,tag: {{Eblog.tag}}
+    </h1>
+</div>
+<input [(ngModel)]="Eblog.title" placeholder="title"/>
+<input [(ngModel)]="Eblog.body" placeholder="body"/>
+<input [(ngModel)]="Eblog.tag" placeholder="tag"/>
+<button (click)="edit()" class="btn btn-danger">Save</button>

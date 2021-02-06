@@ -1,18 +1,3 @@
-<p>blog-list works!</p>
-<!-- <header class="masthead" >
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="page-heading">
-                    <h1>Create New Post</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</header> -->
-
-
 <div class="container" [ngStyle]="{backgroundImage:'url(assets/image/BlogListBG.jfif)'}" style="background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
@@ -41,8 +26,8 @@ border:2px solid lightyellow;">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Tags</label>
-                            <input [(ngModel)]=item.tag type="text" name="Tag" placeholder="Tag"
-                                class="form-control" disabled="false">
+                            <input [(ngModel)]=item.tag type="text" name="Tag" placeholder="Tag" class="form-control"
+                                disabled="false">
                         </div>
                     </div>
                     <div class="control-group">
@@ -50,14 +35,17 @@ border:2px solid lightyellow;">
                             <label>Created Date</label>
                             <input [(ngModel)]=item.createdAt type="text" name="createdAt" placeholder="createdAt"
                                 class="form-control" disabled="false">
+                               <p>{{item.id}} </p> 
                         </div>
                     </div>
-                 
-
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <a [routerLink]="['/blog/edit/',item._id]">edit </a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
         <br /><br />
     </div>
 </div>
-<router-outlet></router-outlet>
