@@ -69,7 +69,8 @@ For demo purpose
                     <p class="font-italic mb-0"> {{item.body}}</p>
                     <p class="font-italic mb-0"> #{{item.tag}}</p>
                     <ul class="list-inline small text-muted mt-3 mb-0">
-                        <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i>12 Comments</li>
+                        <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i><a
+                                [routerLink]="['/readBlog/',item._id]">{{item.comments.length}} Comments</a></li>
                         <li class="list-inline-item"><i class="fa fa-heart-o mr-2"></i>200 Likes</li>
                     </ul>
                     <hr style="height:2px;border-width:0;color:black;background-color:black">
@@ -79,3 +80,4 @@ For demo purpose
     </div>
 
 </div>
+<router-outlet></router-outlet>

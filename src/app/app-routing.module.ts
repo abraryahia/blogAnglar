@@ -11,6 +11,8 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { SettingUserComponent } from './setting-user/setting-user.component';
 import { from } from 'rxjs';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
+import { CommentComponent } from './comment/comment.component';
+import { OpenBlogComponent } from './open-blog/open-blog.component';
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'blog/list', component: BlogListComponent },
   { path: 'blog/edit/:id', component: BlogEditComponent },
   { path: 'profile/setting', component: SettingUserComponent },
-  {path:'search/:id',component:FollowProfileComponent},
+  { path: 'search/:id', component: FollowProfileComponent },
+  { path: 'comment/:id', component: CommentComponent },
+  { path: 'readBlog/:id', component: OpenBlogComponent },
   { path: '**', component: HomeComponent }
 ];
 

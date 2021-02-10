@@ -41,8 +41,8 @@ border:2px solid lightyellow;">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Tags</label>
-                            <input [(ngModel)]=item.tag type="text" name="Tag" placeholder="Tag"
-                                class="form-control" disabled="false">
+                            <input [(ngModel)]=item.tag type="text" name="Tag" placeholder="Tag" class="form-control"
+                                disabled="false">
                         </div>
                     </div>
                     <div class="control-group">
@@ -51,9 +51,14 @@ border:2px solid lightyellow;">
                             <input [(ngModel)]=item.createdAt type="text" name="createdAt" placeholder="createdAt"
                                 class="form-control" disabled="false">
                         </div>
-                    </div>
-                 
+                        <!-- <div>
+                            <a class="btn btn-primary" [routerLink]="['/comment/',item._id]"> comment</a>
+                        </div> -->
+                        <div>
+                            <a class="btn btn-primary" [routerLink]="['/readBlog/',item._id]">view&&Comment</a>
+                        </div>
 
+                    </div>
                 </form>
             </div>
         </div>
@@ -61,3 +66,7 @@ border:2px solid lightyellow;">
     </div>
 </div>
 <router-outlet></router-outlet>
+
+<!-- <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i><a
+    [routerLink]="['readBlog/',item._id]" (click)="BlogService.flag=!BlogService.flag">{{item.comments.length}} Comments</a></li>
+    <app-comment *ngIf="BlogService.flag==true"></app-comment> -->

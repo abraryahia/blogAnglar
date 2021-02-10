@@ -1,0 +1,26 @@
+<p>open-blog works!</p>
+<div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+        <label>Title</label>
+        <input [(ngModel)]="blog.title" type="text" name="Title" placeholder="Title" class="form-control"
+            disabled="false">
+        <label>Body</label>
+        <input [(ngModel)]="blog.body" type="text" name="Title" placeholder="Title" class="form-control"
+            disabled="false">
+
+        <label>Tag</label>
+        <input [(ngModel)]="blog.tag" type="text" name="Title" placeholder="Title" class="form-control"
+            disabled="false">
+
+        <label>comment</label>
+        <div *ngFor="let item of blog.comments">
+            <p type="text" name="Title" placeholder="Title" class="form-control">{{item.content}}</p>
+
+            <input [ngModel]="item.createdAt | date :'short'" type="text" name="Title" placeholder="Date"
+                class="form-control" disabled="false">
+        </div>
+    </div>
+    <textarea [(ngModel)]="comment.content"></textarea>
+
+    <button (click)="save()">comment</button>
+</div>

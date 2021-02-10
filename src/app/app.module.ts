@@ -15,6 +15,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SettingUserComponent } from './setting-user/setting-user.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
+import { CommentComponent } from './comment/comment.component';
+import { OpenBlogComponent } from './open-blog/open-blog.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -31,7 +33,9 @@ export function tokenGetter() {
     UserProfileComponent,
     SettingUserComponent,
     BlogEditComponent,
-    FollowProfileComponent
+    FollowProfileComponent,
+    CommentComponent,
+    OpenBlogComponent
   ],
   imports: [
     BrowserModule,
