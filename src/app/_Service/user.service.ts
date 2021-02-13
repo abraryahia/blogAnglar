@@ -13,7 +13,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   login(username: string, password: string) {
-    return this.http.post<{ token: string }>('http://localhost:3000/user/login', { username: username, password: password })
+    return this.http.post<User>('http://localhost:3000/user/login', { username: username, password: password })
   }
   getUser() {
     return this.http.get<User>('http://localhost:3000/user/me', { headers: { authorization: this.token } })
@@ -40,10 +40,11 @@ export class UserService {
   }
 
   follow(id: string) {
-    return this.http.post('http://localhost:3000/user/follow/' + id, { headers: { authorization: this.token } })
+    console.log(this.token);
+    return this.http.post('http://localhost:3000/user/follow/' + id,{}, { headers: { authorization: this.token } })
   }
   unfollow(id: string) {
-    return this.http.post('http://localhost:3000/user/unfollow/' + id, { headers: { authorization: this.token } })
+    return this.http.post('http://localhost:3000/user/unfollow/' + id,{}, { headers: { authorization: this.token } })
   }
   searchById(id: string) {
     return this.http.get<User>('http://localhost:3000/user/search/' + id, { headers: { authorization: this.token } })

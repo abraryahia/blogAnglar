@@ -1,5 +1,6 @@
 import { noUndefined } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Blog } from '../_Models/blog';
 import { User } from '../_Models/user';
 import { BlogService } from '../_Service/blog.service';
@@ -16,10 +17,20 @@ export class UserProfileComponent implements OnInit {
   profile: string = 'assets/image/Profile.jpg'
   nfid !: number;
   nfoid!: number;
+  likes_count!: number;
+  blog!: Blog;
+  
 
 
-  constructor(public BlogService: BlogService, public UserService: UserService) { }
+  constructor(public BlogService: BlogService, public UserService: UserService, public ar: ActivatedRoute) { }
+  // delete(id:string) {
+    
+  //   this.BlogService.delteeOneBlog(id).subscribe(
+      
+  //     a=>{console.log(a)}
+  //   )
 
+  // }
   ngOnInit(): void {
     this.BlogService.getProfile().subscribe(
       d => this.blogs = d
@@ -32,6 +43,27 @@ export class UserProfileComponent implements OnInit {
         this.nfoid = this.user.followers!.length
       }
     )
+    //trying in like
+    // let id = "";
+    // this.ar.params.subscribe(
+    //   a => {
+    //     console.log("from edit component");
+    //     id = a['id']
+    //     console.log(id);
+    //   }
+    // )
+    // this.BlogService.getOne(id).subscribe(
+    //   d => {
+    //     console.log(d);
+    //     console.log(this.likes_count);
+    //     this.blog = d;
+
+    //   }
+    // )
+
+    //********************trying follow******************//
+
+
 
   }
 

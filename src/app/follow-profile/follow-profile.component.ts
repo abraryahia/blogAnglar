@@ -17,13 +17,15 @@ export class FollowProfileComponent implements OnInit {
   nfid !: number;
   nfoid!: number;
   id: string = "";
-  isFollowing !: boolean;
+  isFollowing: boolean = false;
+  loginId: any;
 
   constructor(public UserService: UserService, public BlogService: BlogService, public ar: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
     let _id = "";
     let username = "";
+    this.loginId = localStorage.getItem("access_id");
     // let userSearch:User=new User("","","","");
     this.ar.params.subscribe(
       c => {
@@ -42,6 +44,8 @@ export class FollowProfileComponent implements OnInit {
         console.log("user", this.user);
         this.nfid = this.user.following!.length;
         this.nfoid = this.user.followers!.length;
+        this.isFollowing = this.user.followers?.includes(this.loginId) || false;
+        console.log(this.isFollowing);
       }
     )
     // this.UserService.searchByName(username).subscribe(
@@ -57,14 +61,47 @@ export class FollowProfileComponent implements OnInit {
       d => this.blogs = d
     )
     this.id = _id;
+    //follow trying
+
   }
+
 
   //Toglle follow button
   toggleFollow() {
     // if (this.isFollowing) this.UserService.unfollow(this.id);
     console.log("follllllllllllllllllloweeeeeeeee");
-    this.UserService.follow(this.id);
-    console.log("حرااااااااااام", this.id);
+    this.UserService.follow(this.id).subscribe(
+      console.log,
+      console.log
+    );
+    console.log(this.id);
   }
+  toggleUnFollow() {
+    // if (this.isFollowing) this.UserService.unfollow(this.id);
+    console.log("follllllllllllllllllloweeeeeeeee");
+    this.UserService.unfollow(this.id).subscribe(
+      console.log,
+      console.log
+    );
+    console.log(this.id);
+  }
+  // follow(){
+  //   let id="";
+  //   console.log(this.id);
+  //   this.ar.params.subscribe(
+  //     a=>{id=a['id']
+  //     this.UserService.follow(this.user._id!).subscribe(
+  //       e=>{
+
+  //         this.user._id!=e
+  //         console.log(e)
+
+  //       }
+  //     )
+  //   }
+
+  //   )
+
+  // }
 
 }

@@ -21,15 +21,18 @@ For demo purpose
                 <div class="media align-items-end profile-header">
                     <div class="profile mr-3"><img src="{{profile}}" alt="..." width="130"
                             class="rounded mb-2 img-thumbnail">
-                            <!-- <a class="btn btn-dark btn-sm btn-block">Follow</a> -->
+                        <!-- <a class="btn btn-dark btn-sm btn-block">Follow</a> -->
 
-                        
-                            <button class="btn btn-is-info btn-sm btn-block"(click)="toggleFollow()">Follow</button>
-                       
 
-                        <ng-template #unfollowButton>
-                            <button class="btn btn-is-warning btn-sm btn-block" (click)="toggleFollow()">Unfollow</button>
-                        </ng-template>
+                        <button *ngIf="!isFollowing" class="btn btn-dark btn-sm btn-block"
+                            (click)="toggleFollow()">Follow</button>
+                        <button *ngIf="isFollowing" class="btn btn-dark btn-sm btn-block" (click)="toggleUnFollow()">Un
+                            Follow</button>
+
+
+                        <!-- <ng-template #unfollowButton>
+                            <button class="btn btn-is-warning btn-sm btn-block" (click)="follow()">Unfollow</button>
+                        </ng-template> -->
                     </div>
                     <div class="media-body mb-5 text-white">
                         <h4 class="mt-0 mb-0">{{user.username}}</h4>

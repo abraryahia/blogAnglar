@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import{JwtModule}from'@auth0/angular-jwt';
+import { JwtModule } from '@auth0/angular-jwt';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
- import { FormsModule} from '@angular/forms'
- import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms'
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -35,7 +35,7 @@ export function tokenGetter() {
     BlogEditComponent,
     FollowProfileComponent,
     CommentComponent,
-    OpenBlogComponent
+    OpenBlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,11 +50,11 @@ export function tokenGetter() {
         // blacklistedRoutes: ['localhost:4000/api/auth']
       }
     })
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
- }
+}
