@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
     .subscribe(
       result => {
         this.UserService.token=result.token;
-        localStorage.setItem('access_token',result.token)
+        localStorage.setItem('access_token',result.token!)
+        localStorage.setItem('access_id',result._id!);
         this.router.navigate(['/blog'])
         console.log(result)
       },

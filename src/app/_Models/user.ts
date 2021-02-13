@@ -7,6 +7,7 @@ export class User {
         public _id?:string,
         public following ?: [{ ref: 'User' }],
         public followers ?: [{ ref: 'User' }],
+        public token?:string,
         )
 
         {  }

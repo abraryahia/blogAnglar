@@ -15,7 +15,7 @@ import { CommentComponent } from './comment/comment.component';
 import { OpenBlogComponent } from './open-blog/open-blog.component';
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent },
+ // { path: 'home', component: HomeComponent },
   { path: 'home/register', component: RegisterComponent },
   { path: 'home/login', component: LoginComponent },
   { path: 'home/profile', component: UserProfileComponent },
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'search/:id', component: FollowProfileComponent },
   { path: 'comment/:id', component: CommentComponent },
   { path: 'readBlog/:id', component: OpenBlogComponent },
-  { path: '**', component: HomeComponent }
+  { path: '**', component: BlogListComponent}
 ];
 
 @NgModule({
