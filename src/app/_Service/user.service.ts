@@ -30,6 +30,8 @@ export class UserService {
   }
   logout() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('access_id');
+
   }
 
   public get loggedIn(): boolean {
@@ -41,16 +43,16 @@ export class UserService {
 
   follow(id: string) {
     console.log(this.token);
-    return this.http.post('http://localhost:3000/user/follow/' + id,{}, { headers: { authorization: this.token } })
+    return this.http.post('http://localhost:3000/user/follow/' + id, {}, { headers: { authorization: this.token } })
   }
   unfollow(id: string) {
-    return this.http.post('http://localhost:3000/user/unfollow/' + id,{}, { headers: { authorization: this.token } })
+    return this.http.post('http://localhost:3000/user/unfollow/' + id, {}, { headers: { authorization: this.token } })
   }
   searchById(id: string) {
     return this.http.get<User>('http://localhost:3000/user/search/' + id, { headers: { authorization: this.token } })
   }
-  searchByName(username:string){
-    return this.http.get<User>('http://localhost:3000/user/name/' + username, { headers: { authorization: this.token } }) 
+  searchByName(username: string) {
+    return this.http.get<User>('http://localhost:3000/user/name/' + username, { headers: { authorization: this.token } })
 
   }
 }

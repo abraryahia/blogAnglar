@@ -31,6 +31,10 @@
                         <textarea [(ngModel)]=nblog.body name="Body" placeholder="Body ..." cols="30" rows="10"
                             class="form-control"></textarea>
                     </div>
+                    <label for="photo">Photo</label>
+                                        <input type="file" name="photo" id="photo" class="form-control"
+                                            (input)="onselect($event)" [(ngModel)]="nblog.photo">
+
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">

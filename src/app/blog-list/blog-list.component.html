@@ -44,6 +44,8 @@ border:2px solid lightyellow;">
                             <input [(ngModel)]=item.tag type="text" name="Tag" placeholder="Tag" class="form-control"
                                 disabled="false">
                         </div>
+                        <img [src]="'http://localhost:3000/'+ item.photo" style="height: 500px; width: 500px; "><br />
+
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">

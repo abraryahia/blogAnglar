@@ -23,10 +23,9 @@ export class CommentComponent implements OnInit {
         this.blog = c
         console.log(c)
         // this.route.navigateByUrl('readBlog')
-        location.reload();
-        
       }
     )
+    location.reload();
     
   }
 
