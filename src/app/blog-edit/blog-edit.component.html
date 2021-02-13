@@ -1,4 +1,4 @@
-<div class="alert-danger">
+<!-- <div class="alert-danger">
     <h1>
        title: {{Eblog.title}} , content :{{Eblog.body}} ,tag: {{Eblog.tag}}
     </h1>
@@ -7,3 +7,100 @@
 <input [(ngModel)]="Eblog.body" placeholder="body"/>
 <input [(ngModel)]="Eblog.tag" placeholder="tag"/>
 <button (click)="edit()" class="btn btn-danger">Save</button>
+ -->
+
+
+
+
+
+<div class=" container" >
+    <div class="col-md-12 col-lg-12">
+    <article class="post vt-post">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                <div class="post-type post-img">
+                    <a href="#"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive" alt="image post"></a>
+                </div>
+                <div class="author-info author-info-2">
+                    <ul class="list-inline">
+                        <li>
+                            <div class="info">
+                                <p>Posted on:</p>
+                                <strong>{{Eblog.createdAt}}</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info">
+                               
+                                <!-- <strong>127</strong>-->
+                            </div> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                <div class="caption">
+                    <!-- <h3 class="md-heading">{{Eblog.title}}</h3>
+                    <p>{{Eblog.body}}</p>
+                    <p>{{Eblog.tag}}</p>
+                   -->
+            </div>
+            <!-- <div>
+                <a class="btn btn-dark" [routerLink]="['/readBlog/',item._id]">view&&Comment</a>
+            </div> -->
+           
+        </div>
+    <!-- </article> -->
+    </div>
+    <div name="sentMessage" id="contactForm" novalidate>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Title</label>
+            <input  class="form-control" placeholder="Title" [(ngModel)]="Eblog.title">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <!-- <label>Body</label>
+            <input type="email" class="form-control" placeholder="body" id="email" > -->
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Tag</label>
+            <input type="tel" class="form-control" placeholder="tag" id="phone" [(ngModel)]="Eblog.tag">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Body</label>
+            <textarea rows="5" class="form-control" placeholder="body" [(ngModel)]="Eblog.body"></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button  class="btn btn-primary" id="sendMessageButton" (click)="edit()" >Send</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    

@@ -9,7 +9,7 @@ import { BlogService } from '../_Service/blog.service';
 })
 export class BlogListComponent implements OnInit {
   blogs:Blog[]=[];
-
+  img="assets/image/blogBG1.jpg";
   constructor(public BlogService:BlogService) { }
 
   ngOnInit(): void {

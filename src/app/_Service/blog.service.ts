@@ -43,6 +43,7 @@ export class BlogService {
   addComment(id: string, comment: Comment) {
     return this.http.post<Blog>("http://localhost:3000/blog/comments/" + id, comment, { headers: { authorization: this.token } });
   }
+  
 
   constructor(private http: HttpClient, private u: UserService) { }
   flag:boolean=false;

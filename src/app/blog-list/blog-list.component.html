@@ -1,72 +1,51 @@
-<p>blog-list works!</p>
-<!-- <header class="masthead" >
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="page-heading">
-                    <h1>Create New Post</h1>
-                </div>
+
+    <p>user-home works!</p>
+<div class=" container" *ngFor="let item of blogs">
+<div class="col-md-12 col-lg-12">
+<article class="post vt-post">
+    <div class="row">
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+            <div class="post-type post-img">
+                <a href="#"><img src={{img}} width="130"
+                    class="rounded mb-2 img-thumbnail" ></a>
+            </div>
+            <div class="author-info author-info-2">
+                <ul class="list-inline">
+                    <li>
+                        <div class="info">
+                            <p>Posted on:</p>
+                            <strong>{{item.createdAt}}</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                           
+                            <!-- <strong>127</strong>-->
+                        </div> 
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</header> -->
-
-
-<div class="container" [ngStyle]="{backgroundImage:'url(assets/image/BlogListBG.jfif)'}" style="background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-border:2px solid lightyellow;">
-    <div *ngFor="let item of blogs; let i=index ;" class="container">
-        <h1 style="background-color:white; text-align: center;">Read New Post{{i+1}}</h1>
-
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <form action="/posts/store" method="POST">
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Title</label>
-                            <input [(ngModel)]="item.title" type="text" name="Title" placeholder="Title"
-                                class="form-control" disabled="false">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Content</label>
-                            <textarea [(ngModel)]=item.body name="Body" placeholder="Body ..." cols="30" rows="10"
-                                class="form-control" disabled="false"></textarea>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Tags</label>
-                            <input [(ngModel)]=item.tag type="text" name="Tag" placeholder="Tag" class="form-control"
-                                disabled="false">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="form-group floating-label-form-group controls">
-                            <label>Created Date</label>
-                            <input [(ngModel)]=item.createdAt type="text" name="createdAt" placeholder="createdAt"
-                                class="form-control" disabled="false">
-                        </div>
-                        <!-- <div>
-                            <a class="btn btn-primary" [routerLink]="['/comment/',item._id]"> comment</a>
-                        </div> -->
-                        <div>
-                            <a class="btn btn-primary" [routerLink]="['/readBlog/',item._id]">view&&Comment</a>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+            <div class="caption">
+                <h3 class="md-heading">{{item.title}}</h3>
+                <p>{{item.body}}</p>
+                <p>{{item.tag}}</p>
+              
         </div>
-        <br /><br />
+        <div>
+            <a class="btn btn-dark" [routerLink]="['/readBlog/',item._id]">view&&Comment</a>
+
+            <a class="btn btn-dark" [routerLink]="['/blog/edit/',item._id]">edit</a>
+
+        </div>
+       
     </div>
+<!-- </article> -->
 </div>
-<router-outlet></router-outlet>
 
-<!-- <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i><a
-    [routerLink]="['readBlog/',item._id]" (click)="BlogService.flag=!BlogService.flag">{{item.comments.length}} Comments</a></li>
-    <app-comment *ngIf="BlogService.flag==true"></app-comment> -->
+
+
+
+
+
