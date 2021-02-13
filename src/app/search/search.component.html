@@ -1,0 +1,14 @@
+<p>search works!</p>
+<button  style="background-color: cornflowerblue; width:50px ; margin-top: 10px;" (click)="sea()">ok</button>
+<div class="card " style="width: 50%; margin-left: 300px; border: 2px solid lightslategray; margin-bottom: 20px;"  >  
+  <div class="modal-header " style=" background-color:#bdbdbd;"></div>
+  <div class="card-body" style=" text-align: center; " *ngFor="let item of  searchbb">
+   
+ 
+    <p class="card-text">{{item.title}}</p>
+    <p class="card-text">{{item.body}}</p>
+    <p class="card-text">{{item.tag}}</p>
+     
+    <div class="modal-footer"  style=" background-color:#cab6b6;"></div>
+  </div>
+</div>

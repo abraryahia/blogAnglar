@@ -43,11 +43,17 @@ export class BlogService {
   addComment(id: string, comment: Comment) {
     return this.http.post<Blog>("http://localhost:3000/blog/comments/" + id, comment, { headers: { authorization: this.token } });
   }
+<<<<<<< Updated upstream
   delteeOneBlog(id:string){
     return this.http.delete<{ msg: string }>("http://localhost:3000/blog/" + id, { headers: { authorization: this.token } });
     
   }
 
+=======
+  serachby(search: string){
+    return this.http.get<Blog[]>("http://localhost:3000/blog/search/" + search , {headers: { authorization: this.token } })
+  }
+>>>>>>> Stashed changes
   constructor(private http: HttpClient, private u: UserService) { }
   flag:boolean=false;
 }

@@ -17,7 +17,11 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 import { CommentComponent } from './comment/comment.component';
 import { OpenBlogComponent } from './open-blog/open-blog.component';
+<<<<<<< Updated upstream
 import { SearchTitleTagComponent } from './search-title-tag/search-title-tag.component';
+=======
+import { SearchComponent } from './search/search.component';
+>>>>>>> Stashed changes
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -37,7 +41,11 @@ export function tokenGetter() {
     FollowProfileComponent,
     CommentComponent,
     OpenBlogComponent,
+<<<<<<< Updated upstream
     SearchTitleTagComponent,
+=======
+    SearchComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

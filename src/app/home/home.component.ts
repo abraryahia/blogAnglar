@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< Updated upstream
 import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from '../_Models/blog';
+=======
+>>>>>>> Stashed changes
 import { BlogService } from '../_Service/blog.service';
 import { UserService } from '../_Service/user.service';
 
@@ -10,6 +13,7 @@ import { UserService } from '../_Service/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+<<<<<<< Updated upstream
     search!:string ;
     blog :Blog[] = [];
   constructor(private u:UserService , private s: BlogService , private router: Router) { }
@@ -26,5 +30,27 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
   }
+=======
 
+
+  constructor(private u:UserService , private BlogService :BlogService) { }
+  logout(){
+    this.u.logout();
+  }
+  
+  seablog!:string ;
+  search()
+  {
+      this.BlogService.serachby(this.seablog).subscribe(
+     a=>{
+       console.log(a);
+       localStorage.setItem('searchblog',JSON.stringify(a));
+      
+     })
+   }
+
+  ngOnInit(): void { 
+>>>>>>> Stashed changes
+
+  }
 }

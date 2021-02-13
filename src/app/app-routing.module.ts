@@ -9,11 +9,14 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { SettingUserComponent } from './setting-user/setting-user.component';
-import { from } from 'rxjs';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 import { CommentComponent } from './comment/comment.component';
 import { OpenBlogComponent } from './open-blog/open-blog.component';
+<<<<<<< Updated upstream
 import { SearchTitleTagComponent } from './search-title-tag/search-title-tag.component';
+=======
+import { SearchComponent } from './search/search.component'
+>>>>>>> Stashed changes
 const routes: Routes = [
 
  // { path: 'home', component: HomeComponent },
@@ -27,8 +30,13 @@ const routes: Routes = [
   { path: 'search/:id', component: FollowProfileComponent },
   { path: 'comment/:id', component: CommentComponent },
   { path: 'readBlog/:id', component: OpenBlogComponent },
+<<<<<<< Updated upstream
   { path: 'searches/:str', component: SearchTitleTagComponent },
   { path: '**', component: BlogListComponent}
+=======
+  {path :' /searchs/{{seablog}}' ,component: SearchComponent  },
+  { path: '**', component: HomeComponent }
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
