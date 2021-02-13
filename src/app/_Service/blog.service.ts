@@ -37,8 +37,8 @@ export class BlogService {
     return this.http.get<Blog[]>("http://localhost:3000/blog/auther/" + id, { headers: { authorization: this.token } })
   }
 
-  getsearch(id: string) {
-    return this.http.get<Blog[]>("http://localhost:3000/blog/searchProfile" + id, { headers: { authorization: this.token } });
+  getsearch(str: string) {
+    return this.http.get<Blog[]>("http://localhost:3000/blog/search/" + str, { headers: { authorization: this.token } });
   }
   addComment(id: string, comment: Comment) {
     return this.http.post<Blog>("http://localhost:3000/blog/comments/" + id, comment, { headers: { authorization: this.token } });

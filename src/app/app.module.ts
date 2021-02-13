@@ -17,6 +17,7 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 import { CommentComponent } from './comment/comment.component';
 import { OpenBlogComponent } from './open-blog/open-blog.component';
+import { SearchTitleTagComponent } from './search-title-tag/search-title-tag.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -36,6 +37,7 @@ export function tokenGetter() {
     FollowProfileComponent,
     CommentComponent,
     OpenBlogComponent,
+    SearchTitleTagComponent,
   ],
   imports: [
     BrowserModule,

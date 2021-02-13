@@ -13,6 +13,7 @@ import { from } from 'rxjs';
 import { FollowProfileComponent } from './follow-profile/follow-profile.component';
 import { CommentComponent } from './comment/comment.component';
 import { OpenBlogComponent } from './open-blog/open-blog.component';
+import { SearchTitleTagComponent } from './search-title-tag/search-title-tag.component';
 const routes: Routes = [
 
  // { path: 'home', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'search/:id', component: FollowProfileComponent },
   { path: 'comment/:id', component: CommentComponent },
   { path: 'readBlog/:id', component: OpenBlogComponent },
+  { path: 'searches/:str', component: SearchTitleTagComponent },
   { path: '**', component: BlogListComponent}
 ];
 
