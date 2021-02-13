@@ -14,7 +14,7 @@ export class BlogService {
   getProfile() {
     return this.http.get<Blog[]>("http://localhost:3000/blog/profile", { headers: { authorization: this.token } })
   }
-  add(nblog: Blog) {
+  add(nblog: FormData) {
     return this.http.post<Blog>("http://localhost:3000/blog/add", nblog, { headers: { authorization: this.token } });
 
   }

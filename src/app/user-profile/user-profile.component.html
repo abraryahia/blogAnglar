@@ -22,8 +22,8 @@ For demo purpose
                             class="rounded mb-2 img-thumbnail"><a  [routerLink]="['/profile/setting']" class="btn btn-dark btn-sm btn-block">Edit
                             profile</a></div>
                     <div class="media-body mb-5 text-white">
-                        <h4 class="mt-0 mb-0">{{user.username}}</h4>
-                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>San Farcisco</p>
+                        <h4 class="mt-0 mb-0" style="color: black;">{{user.username}}</h4>
+                        <!-- <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>San Farcisco</p> -->
                     </div>
                 </div>
             </div>
@@ -62,7 +62,6 @@ For demo purpose
                 <h5 class="mb-3">Recent posts</h5>
                 <div class="p-4 bg-light rounded shadow-sm" *ngFor="let item of blogs">
                     <ul class="list-inline small text-muted mt-3 mb-0">
-<<<<<<< Updated upstream
                         <li class="list-inline-item">
                             <a>Edit</a>
                             <!-- <a (click)="delete(item._id)" class="btn btn-danger "> Delete </a> -->
@@ -70,16 +69,13 @@ For demo purpose
                         </li>
                     </ul>
                     <ul class="list-inline small text-muted mt-3 mb-0">
-                        <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i>CreatedAt: {{item.createdAt}}
-=======
                         <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i>CreatedAt: {{item.createdAt | date : 'short'}}
->>>>>>> Stashed changes
                         </li>
                     </ul>
                     <p class="font-italic mb-0" style="text-align: center">{{item.title}}</p>
                     <p class="font-italic mb-0"> {{item.body}}</p>
                     <p class="font-italic mb-0"> #{{item.tag}}</p>
-                    <ul class="list-inline small text-muted mt-3 mb-0">
+                    <!-- <ul class="list-inline small text-muted mt-3 mb-0">
                         <li class="list-inline-item"><i class="fa fa-comment-o mr-2"></i><a
                                 [routerLink]="['/readBlog/',item._id]">{{item.comments}} Comments</a></li>
                         <li class="list-inline-item"><i class="fa fa-heart-o mr-2"></i>200 Likes</li>

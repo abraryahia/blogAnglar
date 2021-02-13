@@ -75,6 +75,7 @@ export class FollowProfileComponent implements OnInit {
       console.log
     );
     console.log(this.id);
+    location.reload();
   }
   toggleUnFollow() {
     // if (this.isFollowing) this.UserService.unfollow(this.id);
@@ -84,6 +85,7 @@ export class FollowProfileComponent implements OnInit {
       console.log
     );
     console.log(this.id);
+    location.reload();
   }
   // follow(){
   //   let id="";

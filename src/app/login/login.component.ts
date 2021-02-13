@@ -18,17 +18,18 @@ export class LoginComponent implements OnInit {
 
   public login() {
     this.UserService.login(this.username, this.password)
-    .subscribe(
-      result => {
-        this.UserService.token=result.token;
-        localStorage.setItem('access_token',result.token!)
-        localStorage.setItem('access_id',result._id!);
-        this.router.navigate(['/blog'])
-        console.log(result)
-      },
-      err => this.error = 'Could not authenticate'
-    );
-     
+      .subscribe(
+        result => {
+          this.UserService.token = result.token;
+          localStorage.setItem('access_token', result.token!)
+          localStorage.setItem('access_id', result._id!);
+          localStorage.setItem('access_name', result.username)
+          this.router.navigate(['/blog'])
+          console.log(result)
+        },
+        err => this.error = 'Could not authenticate'
+      );
+
   }
 
   ngOnInit(): void {
