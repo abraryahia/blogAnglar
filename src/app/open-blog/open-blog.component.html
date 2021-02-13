@@ -1,26 +1,84 @@
-<p>open-blog works!</p>
-<div class="control-group">
-    <div class="form-group floating-label-form-group controls">
-        <label>Title</label>
-        <input [(ngModel)]="blog.title" type="text" name="Title" placeholder="Title" class="form-control"
-            disabled="false">
-        <label>Body</label>
-        <input [(ngModel)]="blog.body" type="text" name="Title" placeholder="Title" class="form-control"
-            disabled="false">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-        <label>Tag</label>
-        <input [(ngModel)]="blog.tag" type="text" name="Title" placeholder="Title" class="form-control"
-            disabled="false">
-
-        <label>comment</label>
-        <div *ngFor="let item of blog.comments">
-            <p type="text" name="Title" placeholder="Title" class="form-control">{{item.content}}</p>
-
-            <input [ngModel]="item.createdAt | date :'short'" type="text" name="Title" placeholder="Date"
-                class="form-control" disabled="false">
+<div class="container">
+	<div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-body">
+               <section class="post-heading">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="40" height="40" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <a href="#" class="anchor-username"><h4 class="media-heading">Bayu Darmantra</h4></a> 
+                                <a href="#" class="anchor-time">51 mins</a>
+                              </div>
+                            </div>
+                        </div>
+                         <div class="col-md-1">
+                             <a href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                         </div>
+                    </div>             
+               </section>
+               <section class="post-body">
+                   <!-- <p>{{comment.content}}</p> -->
+                   
+               </section>
+               <div *ngFor="let item of blog.comments">
+                <div>
+                 <span  type="text" name="Title" placeholder="Date"
+                    class="form-control" disabled="false">{{item.content}}</span>
+                    <span >{{item.createdAt | date :'short'}} </span>
+                </div>
+            </div>
+           
         </div>
-    </div>
-    <textarea [(ngModel)]="comment.content"></textarea>
+       
+        <br/>
+        
+               <section class="post-footer">
+                   <hr>
+                   <div class="post-footer-option container">
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="glyphicon glyphicon-thumbs-up"></i> Like</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Comment</a></li>
+                                 
+                            <li><a href="#"><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+                        </ul>
+                   </div>
+                   <div class="post-footer-comment-wrapper">
+                       <div class="comment-form">
+                           
+                       </div>
+                       <div class="comment">
+                            <div class="media">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object photo-profile" src="http://0.gravatar.com/avatar/38d618563e55e6082adf4c8f8c13f3e4?s=40&d=mm&r=g" width="32" height="32" alt="...">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <a href="#" class="anchor-username"><h4 class="media-heading">Media heading</h4></a> 
+                                <a href="#" class="anchor-time">51 mins</a>
+                                <textarea [(ngModel)]="comment.content" class="col-11"></textarea>
+                                 <button (click)="save()" class="btn btn-secondary offset-4" >comment</button>
+                      
 
-    <button (click)="save()">comment</button>
-</div>
+                                 <br/>
+                                 <br/>
+                              </div>
+                            </div>
+                       </div>
+                   </div>
+               </section>
+            </div>
+        </div>   
+	</div>
+<!-- </div> -->

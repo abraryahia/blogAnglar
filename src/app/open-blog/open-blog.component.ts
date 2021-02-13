@@ -38,6 +38,7 @@ export class OpenBlogComponent implements OnInit {
     this.BlogService.getOne(id).subscribe(
       a => {
         this.blog = a
+        
 
       }
     )

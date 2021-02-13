@@ -15,6 +15,9 @@ export class BlogEditComponent implements OnInit {
     this.BlogService.editOne(this.Eblog._id!, this.Eblog).subscribe(
       d => {
         // this.Eblog=d
+        // this.Eblog.title=title;
+        // this.Eblog.body=body;
+        // this.Eblog.tag=tag;
         console.log(this.Eblog);        
         this.route.navigateByUrl("/blog/list")
       }
